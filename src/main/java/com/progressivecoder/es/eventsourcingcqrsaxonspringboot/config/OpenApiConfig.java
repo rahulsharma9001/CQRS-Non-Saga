@@ -17,9 +17,9 @@ public class OpenApiConfig {
                         .description("App to demonstrate Event Sourcing using Axon and Spring Boot")
                         .version("1.0.0")
                         .contact(new Contact()
-                                .name("Indrajeet Mukherjee")
+                                .name("Rahul Sharma")
                                 .url("evolve.com")
-                                .email("indrajeet.mukherjee@gmail.com")
+                                .email("rahul.sharma@gmail.com")
                         )
                 );
     }
