@@ -4,6 +4,8 @@ import com.progressivecoder.es.eventsourcingcqrsaxonspringboot.aggregates.Accoun
 import com.thoughtworks.xstream.XStream;
 import org.axonframework.commandhandling.CommandBus;
 import org.axonframework.commandhandling.SimpleCommandBus;
+import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.axonframework.commandhandling.gateway.DefaultCommandGateway;
 import org.axonframework.common.jpa.EntityManagerProvider;
 import org.axonframework.common.transaction.TransactionManager;
 import org.axonframework.eventsourcing.EventSourcingRepository;
@@ -67,6 +69,11 @@ public class AxonConfig {
         return EventSourcingRepository.builder(AccountAggregate.class)
                 .eventStore(eventStore)
                 .build();
+    }
+
+    @Bean
+    public CommandGateway commandGateway(CommandBus commandBus) {
+        return DefaultCommandGateway.builder().commandBus(commandBus).build();
     }
 
     @Bean

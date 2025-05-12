@@ -18,13 +18,13 @@ public class AccountCommandServiceImpl implements AccountCommandService {
 
     private final CommandGateway commandGateway;
 
-    public AccountCommandServiceImpl(ObjectProvider<CommandGateway> commandGatewayProvider) {
-        this.commandGateway = commandGatewayProvider.getIfAvailable();
-    }
-
-//    public AccountCommandServiceImpl(CommandGateway commandGateway) {
-//        this.commandGateway = commandGateway;
+//    public AccountCommandServiceImpl(ObjectProvider<CommandGateway> commandGatewayProvider) {
+//        this.commandGateway = commandGatewayProvider.getIfAvailable();
 //    }
+
+    public AccountCommandServiceImpl(CommandGateway commandGateway) {
+        this.commandGateway = commandGateway;
+    }
 
     @Override
     public CompletableFuture<String> createAccount(AccountCreateDTO accountCreateDTO) {
